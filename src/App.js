@@ -1,27 +1,18 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import React from 'react'
 import './App.css';
-
+import SearchNominees from './components/SearchNominees'
 
 function App() {
   
 
-  const getGodfather = ()=>{
-    axios
-    .get(`http://www.omdbapi.com/?t=The+Godfather&apikey=${process.env.REACT_APP_API_KEY}`)
-    .then(res =>console.log(res.data))
-    .catch(err=>console.log(err.response))
-  }
-
-  useEffect(()=>{
-    getGodfather();
-  },[])
+  
 
 
   return (
     <div className="App">
       <header className="App-header">
-        Shoppies
+        <h1>Shoppies</h1>
+        <SearchNominees/>
         <div></div>
       </header>
     </div>
