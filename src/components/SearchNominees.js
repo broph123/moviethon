@@ -25,17 +25,25 @@ function SearchNominees() {
 
     }
 
-   console.log(results, "Movie List")
+   
     return (
         <>
         <div>
             <input type="text" placeholder="Browse Nominees" value={search} onChange={onChange}/>
-            <div>
-                {results?.map(movie =>{
-                    return <img key={movie}src={movie.Poster}/>
+            {!results ? <div>Loading...</div>:(
+                <div>
+                {results.map(movie =>{
+                    return <ui key={movie}>
+                            <li>{movie.Title}</li>
+                            <button>nominated</button>
+                         </ui>
+
 
                 })}
+                
             </div>
+                
+            )}
              
         </div>
         <div>
