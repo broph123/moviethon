@@ -1,18 +1,27 @@
 import React from 'react'
+import {Button,CircularProgress} from '@material-ui/core'
 
-function NomineeList({movies, handleNominees}) {
+function NomineeList({movies, handleNominees, nominate}) {
     
     return (
        <>
        <div>
-            {!movies ? <div>Loading Nominees...</div>:(
+       <h1>Nominees</h1>
+            {!movies ?
+             <div>
+                 <h2>And the Shoppies goes too!</h2>
+                 <CircularProgress/> 
+             </div>
+             :(
                 <div>
+                    
                 {movies.map(movie =>{
-                    return <ui key={movie.imdbID}>
-                            <li>{movie.Title}</li>
-                            <button onClick={()=>handleNominees(movie)}/>
+                    return <div className="nominees" key={movie.imdbID}>
+                            <p>{movie.Title}</p>
+                            <Button onClick={()=>handleNominees(movie)}> Nominate </Button>
+                            
                            
-                         </ui>
+                         </div>
                          
 
 
