@@ -8,8 +8,10 @@ import NomineeList from "./components/NomineeList";
 import NominatedList from "./components/NominatedList";
 
 function App() {
-  const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
+  const [nominate, setNominate] = useState([]);
+
+  const [movies, setMovies] = useState([]);
   const [nominatedList, setNominatedList] = useState([]);
 
   const getMovies = () => {
@@ -26,18 +28,27 @@ function App() {
   }, [search]);
 
   const nominateMovie = (movie) => {
+    console.log(movie, "Movie");
     const newNomineeList = [...nominatedList, movie];
     setNominatedList(newNomineeList);
+    const newNomineeImdb = [...nominate, movie.imdbID];
+    console.log(newNomineeImdb, "Add Movie");
+    setNominate(newNomineeImdb);
   };
 
   const removeNominee = (movie) => {
+    console.log(movie, "Movie");
     const newNomineeList = nominatedList.filter(
       (nominee) => nominee.imdbID !== movie.imdbID
     );
     setNominatedList(newNomineeList);
+    const newNomineeImdb = nominate.filter((item) => item !== movie.imdbID);
+    console.log(newNomineeImdb, "Remove Movie");
+    setNominate(newNomineeImdb);
   };
 
-  console.log(nominatedList);
+  console.table(movies);
+
   return (
     <div>
       <div className="center">
@@ -45,9 +56,17 @@ function App() {
         <SearchNominees search={search} setSearch={setSearch} />
       </div>
       <div className="movie-container">
-        <NomineeList movies={movies} handleNominees={nominateMovie} />
+        <NomineeList
+          movies={movies}
+          handleNominees={nominateMovie}
+          nominate={nominate}
+        />
       </div>
 
+      <div className="nominated-list">
+        <h2 style={{ display: "inline" }}>Nominated List</h2>
+        <p style={{ display: "inline" }}> (Select up to 5) </p>
+      </div>
       <div className="movie-container">
         <NominatedList movies={nominatedList} handleNominees={removeNominee} />
       </div>

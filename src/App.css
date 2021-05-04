@@ -4,11 +4,11 @@ body {
 }
 .center {
   display: flex;
-  position: fixed;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
-  background-color: red;
+  position: fixed;
+  width: 100%;
+  background-color: black;
 }
 
 .movie-container {
@@ -20,14 +20,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: auto;
   margin: 10px 3px;
-  padding: auto;
 }
 
 .movies > img {
-  width: 400px;
-  height: 400px;
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
 }
 .movies > h2 {
   display: flex;
@@ -38,4 +38,14 @@ body {
 .movies > p {
   display: flex;
   justify-content: center;
+}
+
+.nominated-list {
+  margin: 80px 0px 0px 0px;
+}
+
+.vote-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
