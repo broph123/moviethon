@@ -1,39 +1,25 @@
-import React from 'react'
-import {Button,CircularProgress} from '@material-ui/core'
+import React from "react";
+import { LinearProgress, Button } from "@material-ui/core";
 
-function NomineeList({movies, handleNominees, nominate}) {
-    
-    return (
-       <>
-       <div>
-       <h1>Nominees</h1>
-            {!movies ?
-             <div>
-                 <h2>And the Shoppies goes too!</h2>
-                 <CircularProgress/> 
-             </div>
-             :(
-                <div>
-                    
-                {movies.map(movie =>{
-                    return <div className="nominees" key={movie.imdbID}>
-                            <p>{movie.Title}</p>
-                            <Button onClick={()=>handleNominees(movie)}> Nominate </Button>
-                            
-                           
-                         </div>
-                         
-
-
-                })}
-                
-            </div>
-                
-            )}
-             
+function NomineeList({ movies, handleNominees }) {
+  return (
+    <>
+      {!movies ? (
+        <div>
+          <h2>Search Your Nominees</h2>
         </div>
-       </>
-    )
+      ) : (
+        movies.map((movie) => (
+          <div className="movies">
+            <img src={movie.Poster} alt="movie"></img>
+            <h2>{movie.Title}</h2>
+            <p>{movie.Year}</p>
+            <button onClick={() => handleNominees(movie)}> Nominate</button>
+          </div>
+        ))
+      )}
+    </>
+  );
 }
 
-export default NomineeList
+export default NomineeList;

@@ -1,30 +1,24 @@
-import React from 'react'
+import React from "react";
+import { LinearProgress, Button } from "@material-ui/core";
 
-function NominatedList({nominated,handleNominees}) {
-    return (
-        <>
+function NominatedList({ movies, handleNominees }) {
+  return (
+    <>
+      {movies.length > 4 ? (
         <div>
-            <h1>Nominated</h1>
-             {nominated.length>5? <div>Can't Add any more</div>:(
-                 <div>
-                 {nominated.map(movie =>{
-                     return <div key={movie.imdbID}>
-                             <p>{movie.Title}</p>
-                             <button onClick={()=>handleNominees(movie)}/>
-                          </div>
-                          
-                          
- 
- 
-                 })}
-                 
-             </div>
-                 
-             )}
-              
-         </div>
-        </>
-     )
+          <h3>Your votes have been sent to comittee</h3>
+        </div>
+      ) : (
+        movies.map((movie) => (
+          <div className="movies">
+            <img src={movie.Poster} alt="movie"></img>
+            <h2>{movie.Title}</h2>
+            <button onClick={() => handleNominees(movie)}> Remove</button>
+          </div>
+        ))
+      )}
+    </>
+  );
 }
 
-export default NominatedList
+export default NominatedList;

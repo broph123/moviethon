@@ -1,4 +1,41 @@
-.nominees{
+body {
+  background: #141414;
+  color: #ffffff;
+}
+.center {
   display: flex;
-  border-color: red;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: red;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.movies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  margin: 10px 3px;
+  padding: auto;
+}
+
+.movies > img {
+  width: 400px;
+  height: 400px;
+}
+.movies > h2 {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.movies > p {
+  display: flex;
+  justify-content: center;
 }

@@ -3,7 +3,7 @@ import React from 'react'
 
 function SearchNominees({search,setSearch}) {
     return (
-        <div>
+        <div className='col col-sm-2'>
             <input
             type="text"
             placeholder="Browse Nominees"
