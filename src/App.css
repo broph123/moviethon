@@ -6,30 +6,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  width: 100%;
   background-color: black;
+  width: 100%;
+  position: fixed;
 }
 
 .movie-container {
   display: flex;
   flex-direction: row;
+  height: 500px;
 }
 
 .movies {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   margin: 10px 3px;
 }
 
 .movies > img {
-  display: flex;
-  justify-content: center;
+  margin: auto;
+  display: block;
   width: 350px;
   height: 350px;
 }
-.movies > h2 {
+.movies > p {
   display: flex;
   justify-content: center;
   white-space: nowrap;
@@ -40,12 +42,10 @@ body {
   justify-content: center;
 }
 
-.nominated-list {
-  margin: 80px 0px 0px 0px;
+button {
+  border-radius: 50px;
 }
 
-.vote-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.nominated-list {
+  margin: 80px 0px 0px 0px;
 }
