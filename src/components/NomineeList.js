@@ -27,7 +27,7 @@ function NomineeList({ movies, handleNominees, nominate }) {
               </button>
             ) : (
               <button disabled={nominate} onClick={() => handleNominees(movie)}>
-                UnNominate
+                Nominated
               </button>
             )}
           </div>

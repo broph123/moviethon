@@ -66,21 +66,32 @@ function App() {
         <SearchNominees search={search} setSearch={setSearch} />
       </div>
 
-      <div className="movie-container">
-        <NomineeList
-          movies={movies}
-          handleNominees={nominateMovie}
-          nominate={nominate}
-        />
-      </div>
+      {nominatedList.length > 4 ? (
+        <div>
+          <h1>Your Votes hav been counted</h1>
+        </div>
+      ) : (
+        <div>
+          <div className="movie-container">
+            <NomineeList
+              movies={movies}
+              handleNominees={nominateMovie}
+              nominate={nominate}
+            />
+          </div>
 
-      <div className="nominated-list">
-        <h2 style={{ display: "inline" }}>Nominated List</h2>
-        <p style={{ display: "inline" }}> (Select up to 5) </p>
-      </div>
-      <div className="movie-container">
-        <NominatedList movies={nominatedList} handleNominees={removeNominee} />
-      </div>
+          <div className="nominated-list">
+            <h2 style={{ display: "inline" }}>Nominated List</h2>
+            <p style={{ display: "inline" }}> (Select up to 5) </p>
+          </div>
+          <div className="movie-container">
+            <NominatedList
+              movies={nominatedList}
+              handleNominees={removeNominee}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
