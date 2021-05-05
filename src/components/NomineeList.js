@@ -15,7 +15,7 @@ function NomineeList({ movies, handleNominees, nominate }) {
         movies.map((movie) => (
           <div className="movies" key={movie.imdbID}>
             <img src={movie.Poster} alt="movie"></img>
-            <h2>{movie.Title}</h2>
+            <p>{movie.Title}</p>
             <p>{movie.Year}</p>
             {!nominate.includes(movie.imdbID) ? (
               <button

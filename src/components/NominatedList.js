@@ -9,7 +9,7 @@ function NominatedList({ movies, handleNominees }) {
         movies.map((movie) => (
           <div className="movies" key={movie.imdbID}>
             <img src={movie.Poster} alt="movie"></img>
-            <h2>{movie.Title}</h2>
+            <p>{movie.Title}</p>
             <button onClick={() => handleNominees(movie)}> Remove</button>
           </div>
         ))

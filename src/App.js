@@ -44,7 +44,7 @@ function App() {
     setNominatedList(newNomineeList);
     const newNomineeImdb = [...nominate, movie.imdbID];
     setNominate(newNomineeImdb);
-    saveToLocalStorage(newNomineeList);
+    // saveToLocalStorage(newNomineeList);
   };
 
   const removeNominee = (movie) => {
@@ -54,7 +54,7 @@ function App() {
     setNominatedList(newNomineeList);
     const newNomineeImdb = nominate.filter((item) => item !== movie.imdbID);
     setNominate(newNomineeImdb);
-    saveToLocalStorage(newNomineeList);
+    // saveToLocalStorage(newNomineeList);
   };
 
   console.table(movies);
