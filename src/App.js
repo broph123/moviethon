@@ -61,10 +61,10 @@ function App() {
 
   return (
     <div>
-      <div className="center">
-        <h1>The Shoppies</h1>
+      <nav className="center">
+        <h1 style={{ paddingLeft: "10px" }}>The Shoppies</h1>
         <SearchNominees search={search} setSearch={setSearch} />
-      </div>
+      </nav>
 
       {nominatedList.length > 4 ? (
         <div>
@@ -81,7 +81,9 @@ function App() {
           </div>
 
           <div className="nominated-list">
-            <h2 style={{ display: "inline" }}>Nominated List</h2>
+            <h2 style={{ display: "inline", marginLeft: "15px" }}>
+              Nominated List
+            </h2>
             <p style={{ display: "inline" }}> (Select up to 5) </p>
           </div>
           <div className="movie-container">

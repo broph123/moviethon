@@ -2,16 +2,15 @@ body {
   background: #141414;
   color: #ffffff;
 }
-.center {
+
+nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: black;
   width: 100%;
   position: fixed;
-}
-.center > h1 {
-  padding-left: 10px;
+  background: black;
 }
 
 input {
@@ -27,6 +26,8 @@ input {
   display: flex;
   flex-direction: row;
   height: 500px;
+  margin: 5px 0 0 10px;
+  padding-top: 150px;
 }
 
 .movies {
@@ -42,6 +43,7 @@ input {
   display: block;
   width: 350px;
   height: 350px;
+  border-radius: 10%;
 }
 .movies > p {
   display: flex;
