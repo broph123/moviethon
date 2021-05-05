@@ -8,9 +8,7 @@ function NomineeList({ movies, handleNominees, nominate }) {
   return (
     <>
       {!movies || movies.length == 0 ? (
-        <div className="vote-overlay">
-          <h2>Vote for up to 5 Nominess</h2>
-        </div>
+        <div></div>
       ) : (
         movies.map((movie) => (
           <div className="movies" key={movie.imdbID}>

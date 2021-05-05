@@ -63,3 +63,12 @@ button {
 .nominated-list {
   margin: 80px 0px 0px 0px;
 }
+
+.vote {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}

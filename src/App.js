@@ -6,6 +6,7 @@ import "./App.css";
 import SearchNominees from "./components/SearchNominees";
 import NomineeList from "./components/NomineeList";
 import NominatedList from "./components/NominatedList";
+import { red } from "@material-ui/core/colors";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -60,41 +61,45 @@ function App() {
   console.table(movies);
 
   return (
-    <div>
-      <nav className="center">
-        <h1 style={{ paddingLeft: "10px" }}>The Shoppies</h1>
-        <SearchNominees search={search} setSearch={setSearch} />
-      </nav>
-
-      {nominatedList.length > 4 ? (
-        <div>
-          <h1>Your Votes hav been counted</h1>
+    <>
+      {nominatedList.length === 5 ? (
+        <div className="vote">
+          <h1>
+            Thank you for your votes. See you at the next Shoppies!! 🎉 🎉 🎉
+          </h1>
         </div>
       ) : (
-        <div>
-          <div className="movie-container">
-            <NomineeList
-              movies={movies}
-              handleNominees={nominateMovie}
-              nominate={nominate}
-            />
-          </div>
+        <>
+          <nav className="center">
+            <h1 style={{ paddingLeft: "10px" }}>The Shoppies</h1>
+            <SearchNominees search={search} setSearch={setSearch} />
+          </nav>
 
-          <div className="nominated-list">
-            <h2 style={{ display: "inline", marginLeft: "15px" }}>
-              Nominated List
-            </h2>
-            <p style={{ display: "inline" }}> (Select up to 5) </p>
+          <div>
+            <div className="movie-container">
+              <NomineeList
+                movies={movies}
+                handleNominees={nominateMovie}
+                nominate={nominate}
+              />
+            </div>
+
+            <div className="nominated-list">
+              <h2 style={{ display: "inline", marginLeft: "15px" }}>
+                Nominated List
+              </h2>
+              <p style={{ display: "inline" }}> (Select up to 5) </p>
+            </div>
+            <div className="movie-container">
+              <NominatedList
+                movies={nominatedList}
+                handleNominees={removeNominee}
+              />
+            </div>
           </div>
-          <div className="movie-container">
-            <NominatedList
-              movies={nominatedList}
-              handleNominees={removeNominee}
-            />
-          </div>
-        </div>
+        </>
       )}
-    </div>
+    </>
   );
 }
 
