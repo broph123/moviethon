@@ -4,9 +4,7 @@ function NominatedList({ movies, handleNominees }) {
   return (
     <>
       {movies.length > 4 ? (
-        <div className="vote-limit">
-          <h3>Your votes have been sent to comittee</h3>
-        </div>
+        <h1>Your Votes Have Been Submitted</h1>
       ) : (
         movies.map((movie) => (
           <div className="movies" key={movie.imdbID}>

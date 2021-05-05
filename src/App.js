@@ -27,24 +27,34 @@ function App() {
     getMovies(search);
   }, [search]);
 
+  useEffect(() => {
+    const movieNominate = JSON.parse(localStorage.getItem("shoppies-nominate"));
+
+    if (movieNominate) {
+      setNominatedList(movieNominate);
+    }
+  }, []);
+
+  const saveToLocalStorage = (item) => {
+    localStorage.setItem("shoppies-nominate", JSON.stringify(item));
+  };
+
   const nominateMovie = (movie) => {
-    console.log(movie, "Movie");
     const newNomineeList = [...nominatedList, movie];
     setNominatedList(newNomineeList);
     const newNomineeImdb = [...nominate, movie.imdbID];
-    console.log(newNomineeImdb, "Add Movie");
     setNominate(newNomineeImdb);
+    saveToLocalStorage(newNomineeList);
   };
 
   const removeNominee = (movie) => {
-    console.log(movie, "Movie");
     const newNomineeList = nominatedList.filter(
       (nominee) => nominee.imdbID !== movie.imdbID
     );
     setNominatedList(newNomineeList);
     const newNomineeImdb = nominate.filter((item) => item !== movie.imdbID);
-    console.log(newNomineeImdb, "Remove Movie");
     setNominate(newNomineeImdb);
+    saveToLocalStorage(newNomineeList);
   };
 
   console.table(movies);
@@ -55,6 +65,7 @@ function App() {
         <h1>The Shoppies</h1>
         <SearchNominees search={search} setSearch={setSearch} />
       </div>
+
       <div className="movie-container">
         <NomineeList
           movies={movies}
@@ -75,7 +86,3 @@ function App() {
 }
 
 export default App;
-
-// Component that searches through the movie DB
-// Shows the Movie
-// Shows which movies have been nominated.
