@@ -5,7 +5,7 @@ function NomineeList({ movies, handleNominees, nominate }) {
   return (
     <>
       {!movies ? (
-        <div className="vote">
+        <div className="nom-loading">
           <CircularProgress color="secondary" />
         </div>
       ) : (
