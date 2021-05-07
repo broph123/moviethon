@@ -5,7 +5,7 @@ function SearchNominees({ search, setSearch }) {
     <div>
       <input
         type="text"
-        placeholder="Browse Nominees"
+        placeholder="Search Your Favorite Movies to Nominate"
         onChange={(e) => setSearch(e.target.value)}
       ></input>
     </div>

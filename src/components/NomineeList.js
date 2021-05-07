@@ -2,17 +2,21 @@ import React from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 function NomineeList({ movies, handleNominees, nominate }) {
+  const altPic = (ev) => {
+    ev.target.src =
+      "https://i.pcmag.com/imagery/reviews/02lLbDwVdtIQN2uDFnHeN41-11..1569480019.jpg";
+  };
+
   return (
     <>
       {!movies ? (
         <div className="nom-loading">
-          <h2>Search Shoppie Nominees 🎉 🎉</h2>
           <CircularProgress color="secondary" />
         </div>
       ) : (
         movies.map((movie) => (
           <div className="movies" key={movie.imdbID}>
-            <img src={movie.Poster} alt="movie"></img>
+            <img onError={altPic} src={movie.Poster} alt="movie"></img>
             <p>{movie.Title}</p>
             <p>{movie.Year}</p>
             {!nominate.includes(movie.imdbID) ? (

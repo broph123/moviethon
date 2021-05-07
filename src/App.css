@@ -15,12 +15,15 @@ nav {
 }
 
 input {
-  padding: 2px 200px;
-  margin-right: 20px;
+  width: 500px;
+  padding: 5px 5px;
   border-radius: 50px;
+  margin-right: 5px;
 }
 ::placeholder {
   color: black;
+  width: 100%;
+  text-align: center;
 }
 
 .nom-loading {
@@ -31,9 +34,6 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.nom-loading > .MuiCircularProgress-root {
-  margin: 15px 0px 0px 200px;
 }
 
 .movie-container {
