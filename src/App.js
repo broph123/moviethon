@@ -73,7 +73,7 @@ function App() {
               <h2 style={{ display: "inline", marginLeft: "15px" }}>
                 Nominated List
               </h2>
-              <p style={{ display: "inline" }}> (Select up to 5) </p>
+              <p style={{ display: "inline" }}> (you have 5 votes) </p>
             </div>
             <div className="movie-container">
               <NominatedList

@@ -6,6 +6,7 @@ function NomineeList({ movies, handleNominees, nominate }) {
     <>
       {!movies ? (
         <div className="nom-loading">
+          <h2>Search Shoppie Nominees 🎉 🎉</h2>
           <CircularProgress color="secondary" />
         </div>
       ) : (
