@@ -6,7 +6,6 @@ import "./App.css";
 import SearchNominees from "./components/SearchNominees";
 import NomineeList from "./components/NomineeList";
 import NominatedList from "./components/NominatedList";
-import { red } from "@material-ui/core/colors";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -28,24 +27,11 @@ function App() {
     getMovies(search);
   }, [search]);
 
-  useEffect(() => {
-    const movieNominate = JSON.parse(localStorage.getItem("shoppies-nominate"));
-
-    if (movieNominate) {
-      setNominatedList(movieNominate);
-    }
-  }, []);
-
-  const saveToLocalStorage = (item) => {
-    localStorage.setItem("shoppies-nominate", JSON.stringify(item));
-  };
-
   const nominateMovie = (movie) => {
     const newNomineeList = [...nominatedList, movie];
     setNominatedList(newNomineeList);
     const newNomineeImdb = [...nominate, movie.imdbID];
     setNominate(newNomineeImdb);
-    // saveToLocalStorage(newNomineeList);
   };
 
   const removeNominee = (movie) => {
@@ -55,14 +41,13 @@ function App() {
     setNominatedList(newNomineeList);
     const newNomineeImdb = nominate.filter((item) => item !== movie.imdbID);
     setNominate(newNomineeImdb);
-    // saveToLocalStorage(newNomineeList);
   };
 
   console.table(movies);
 
   return (
     <>
-      {nominatedList.length === 5 ? (
+      {nominatedList.length > 4 ? (
         <div className="vote">
           <h1>
             Thank you for your votes. See you at the next Shoppies!! 🎉 🎉 🎉

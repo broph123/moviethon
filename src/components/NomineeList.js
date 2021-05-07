@@ -1,14 +1,13 @@
 import React from "react";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 function NomineeList({ movies, handleNominees, nominate }) {
-  // const toggle = () => {
-  //   setNominate(!nominate);
-  // };
-
   return (
     <>
       {!movies || movies.length == 0 ? (
-        <div></div>
+        <div className="vote">
+          <CircularProgress color="secondary" />
+        </div>
       ) : (
         movies.map((movie) => (
           <div className="movies" key={movie.imdbID}>
