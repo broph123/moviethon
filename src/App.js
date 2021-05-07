@@ -7,7 +7,7 @@ import NomineeList from "./components/NomineeList";
 import NominatedList from "./components/NominatedList";
 
 function App() {
-  const [search, setSearch] = useState("downhill+racer");
+  const [search, setSearch] = useState("the+la");
   const [nominate, setNominate] = useState([]);
 
   const [movies, setMovies] = useState([]);
