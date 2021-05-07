@@ -4,7 +4,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 function NomineeList({ movies, handleNominees, nominate }) {
   return (
     <>
-      {!movies || movies.length == 0 ? (
+      {!movies ? (
         <div className="vote">
           <CircularProgress color="secondary" />
         </div>
