@@ -49,13 +49,13 @@ function App() {
       {nominatedList.length > 4 ? (
         <div className="vote">
           <h1>
-            Thank you for your votes. See you at the next Shoppies!! 🎉 🎉 🎉
+            Thank you for your votes. See you at the next MovieThons!! 🎉 🎉 🎉
           </h1>
         </div>
       ) : (
         <>
           <nav className="center">
-            <h1 style={{ paddingLeft: "10px" }}>The Shoppies</h1>
+            <h1 style={{ paddingLeft: "10px" }}>The MovieThons</h1>
             <SearchNominees search={search} setSearch={setSearch} />
           </nav>
 
