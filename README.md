@@ -1,4 +1,4 @@
-# The Shoppies
+# The MovieThons
 
 The Shoppies is an award ceremony for movie lovers. Users can browse movies titles and vote for their favorites. 
 
