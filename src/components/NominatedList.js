@@ -8,7 +8,9 @@ function NominatedList({ movies, handleNominees }) {
           <img src={movie.Poster} alt="movie"></img>
           <p>{movie.Title}</p>
           <p>{movie.Year}</p>
-          <button onClick={() => handleNominees(movie)}> Remove</button>
+          <div className="button">
+            <button onClick={() => handleNominees(movie)}> Remove</button>
+          </div>
         </div>
       ))}
     </>

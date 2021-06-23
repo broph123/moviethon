@@ -1,10 +1,10 @@
 import React from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import pic from "../images/noun_Movie_2524043.png";
 
 function NomineeList({ movies, handleNominees, nominate }) {
   const altPic = (ev) => {
-    ev.target.src =
-      "https://i.pcmag.com/imagery/reviews/02lLbDwVdtIQN2uDFnHeN41-11..1569480019.jpg";
+    ev.target.src = pic;
   };
 
   return (
